@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "aasawari.sahasrabuddhe/laravel-mongodb-starter-kit",
+    "name": "aasawari.sahasrabuddhe/laravel-with-mongodb-starter-kit",
     "type": "project",
     "description": "A Laravel application pre-configured with MongoDB integration",
     "keywords": ["laravel", "mongodb", "starter-kit"],
