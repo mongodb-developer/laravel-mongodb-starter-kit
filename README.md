@@ -1,61 +1,95 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel with MongoDB Starter Kit
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This starter kit provides a ready-to-use Laravel setup configured to use MongoDB as the primary database. It simplifies the initial configuration so you can get started with building Laravel apps using MongoDB right away.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##  Prerequisites
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Before using this starter kit, make sure the following dependencies are installed on your machine:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Install PHP
 
-## Learning Laravel
+Make sure PHP is installed (version 8.1 or higher recommended).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+php -v
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+If not installed, follow instructions on [php.net](https://www.php.net/manual/en/install.php) to install PHP on your system.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Install MongoDB Extension for PHP
 
-## Laravel Sponsors
+Use PECL to install the MongoDB driver:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+pecl install mongodb
+```
 
-### Premium Partners
+> ✅ You may need to enable the extension in your `php.ini` file:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```ini
+extension=mongodb.so
+```
 
-## Contributing
+For more details, refer to the [official MongoDB PHP driver documentation](https://www.php.net/manual/en/mongodb.installation.pecl.php).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+##  Create a New Laravel Project Using the Starter Kit
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Run the following command to create a new Laravel project with MongoDB support:
 
-## Security Vulnerabilities
+```bash
+laravel new your-app-name --using=aasawari.sahasrabuddhe/laravel-with-mongodb-starter-kit
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+This command will scaffold a Laravel project with MongoDB configured out of the box.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## ⚙️ Configuration Details
+
+### `config/database.php`
+
+The starter kit sets the default database connection to MongoDB and adds a connection config block:
+
+```php
+'default' => env('DB_CONNECTION', 'mongodb'),
+
+'mongodb' => [
+    'driver'   => 'mongodb',
+    'dsn'      => env('MONGODB_URI', 'mongodb://localhost:27017'),
+    'database' => env('MONGODB_DATABASE', 'laravel_app'),
+],
+```
+
+### `.env.example`
+
+The `.env.example` file includes sample environment variables for MongoDB:
+
+```env
+###> mongodb/laravel-mongodb ###
+# DB_CONNECTION=mongodb
+# Format described at https://www.mongodb.com/docs/php-library/current/connect/connection-options/
+# MONGODB_URI="mongodb://username:password@localhost:27017/?authSource=auth-db"
+# MONGODB_URI="mongodb+srv://username:password@YOUR_CLUSTER_NAME.YOUR_HASH.mongodb.net/?retryWrites=true&w=majority"
+# MONGODB_DATABASE="test"
+###< mongodb/laravel-mongodb ###
+```
+
+You can update these values in your `.env` file to point to your local or cloud MongoDB instance.
+
+---
+
+## ✅ You're All Set!
+
+After setting the correct MongoDB credentials in your `.env`, you can now run the Laravel app:
+
+```bash
+php artisan serve
+```
+
+Start building your Laravel + MongoDB-powered application!
+
+---
