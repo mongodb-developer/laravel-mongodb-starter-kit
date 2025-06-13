@@ -5,7 +5,7 @@
     "description": "A Laravel application pre-configured with MongoDB integration",
     "keywords": ["laravel", "mongodb", "starter-kit"],
     "license": "MIT",
-    "homepage": "https://github.com/aasawariMongoDB/mongodb-starter-kit-for-laravel.git",
+    "homepage": "https://github.com/mongodb-developer/laravel-mongodb-starter-kit",
     "authors": [
         {
             "name": "Aasawari Sahasrabuddhe",
