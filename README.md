@@ -41,7 +41,7 @@ For more details, refer to the [official MongoDB PHP driver documentation](https
 Run the following command to create a new Laravel project with MongoDB support:
 
 ```bash
-laravel new your-app-name --using=aasawari.sahasrabuddhe/laravel-with-mongodb-starter-kit
+laravel new your-app-name --using=mongodb-developer/laravel-with-mongodb-starter-kit
 ```
 
 This command will scaffold a Laravel project with MongoDB configured out of the box.
@@ -91,5 +91,8 @@ php artisan serve
 ```
 
 Start building your Laravel + MongoDB-powered application!
+
+
+For learn more about integration MongoDB in Laravel applications, refer to the [official Laravel Documentations](https://laravel.com/docs/12.x/mongodb).
 
 ---
