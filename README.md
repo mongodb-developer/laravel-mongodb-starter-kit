@@ -93,6 +93,6 @@ php artisan serve
 Start building your Laravel + MongoDB-powered application!
 
 
-For learn more about integration MongoDB in Laravel applications, refer to the [official Laravel Documentations](https://laravel.com/docs/12.x/mongodb).
+For learn more about integrating MongoDB in Laravel applications, refer to the [official MongoDB Documentations](https://www.mongodb.com/docs/drivers/php/laravel-mongodb/current/quick-start/).
 
 ---
