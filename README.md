@@ -189,7 +189,7 @@ php artisan serve
 
 ## Features Overview
 
-### 🔐 Authentication System
+###  Authentication System
 Complete authentication flow with:
 - User registration with email verification
 - Secure login with rate limiting
@@ -197,129 +197,38 @@ Complete authentication flow with:
 - Remember me functionality
 - Session management
 
-### 👥 User Management
+###  User Management
 Administrative interface for:
 - Viewing all users
 - Editing user information
 - Deleting users
 
-### 📧 Email Features
+###  Email Features
 - Email verification for new registrations
 - Password reset emails
 - Configurable mail settings
 
-### 🛡️ Security Features
+###  Security Features
 - Password hashing with bcrypt
 - CSRF protection
 - Rate limiting on login attempts
 - Secure session handling
 - Input validation
 
-## Development Commands
-
-### Run Tests
-```bash
-php artisan test
-```
-
-### Code Formatting
-```bash
-./vendor/bin/pint
-```
-
-## MongoDB Specific Features
-
-### Document Structure
-Users are stored as MongoDB documents with flexible schema support:
-
-```json
-{
-  "_id": ObjectId("..."),
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "$2y$12$...",
-  "email_verified_at": ISODate("..."),
-  "created_at": ISODate("..."),
-  "updated_at": ISODate("...")
-}
-```
-
-### Indexing
-Consider adding indexes for better performance:
-
-```javascript
-// In MongoDB shell
-db.users.createIndex({ "email": 1 }, { unique: true })
-db.users.createIndex({ "created_at": -1 })
-```
-
-## Customization
-
-### Adding New Fields
-To add fields to the User model:
-
-1. Update the `$fillable` array in `app/Models/User.php`
-2. Update validation rules in request classes
-3. Update forms and views accordingly
-
-### Custom Authentication
-The authentication system can be customized by modifying controllers in `app/Http/Controllers/Auth/`
 
 ## What's Included
 
 This starter kit provides:
 
-✅ **Database Configuration** - MongoDB connection ready to use  
-✅ **User Model** - MongoDB-compatible User model with authentication  
-✅ **Authentication Controllers** - Complete auth flow (login, register, password reset, etc.)  
-✅ **User Management** - CRUD operations for user administration  
-✅ **Profile Management** - User profile editing capabilities  
-✅ **Form Requests** - Validation classes for user input  
-✅ **Routes** - Pre-defined routes for all functionality  
-✅ **Security** - Built-in security features and rate limiting  
+ **Database Configuration** - MongoDB connection ready to use  
+ **User Model** - MongoDB-compatible User model with authentication  
+ **Authentication Controllers** - Complete auth flow (login, register, password reset, etc.)  
+ **User Management** - CRUD operations for user administration  
+ **Profile Management** - User profile editing capabilities  
+ **Form Requests** - Validation classes for user input  
+ **Routes** - Pre-defined routes for all functionality  
+ **Security** - Built-in security features and rate limiting  
 
-## Troubleshooting
+For learning more about integration MongoDB in Laravel applications, refer to the [official Laravel Documentations](https://laravel.com/docs/12.x/mongodb).
 
-### MongoDB Connection Issues
-1. Ensure MongoDB is running
-2. Check connection string in `.env`
-3. Verify MongoDB extension is installed: `php -m | grep mongodb`
-
-### Permission Issues
-```bash
-chmod -R 775 storage bootstrap/cache
-```
-
-### Clear Cache
-```bash
-php artisan config:clear
-php artisan cache:clear
-php artisan route:clear
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Support
-
-For issues and questions:
-- Check the [Issues](https://github.com/aasawariMongoDB/mongodb-starter-kit-for-laravel/issues) page
-- Create a new issue if needed
-- Contact: aasawari.sahasrabuddhe@mongodb.com
-
-## Acknowledgments
-
-- Laravel Framework
-- MongoDB Laravel Integration
-- Laravel Breeze for authentication scaffolding
-
----
+Start building your Laravel + MongoDB-powered application!
